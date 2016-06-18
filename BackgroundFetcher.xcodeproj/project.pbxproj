@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99FC6A3932EE8EC2C3AE1928 /* Pods_BackgroundFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EEA79DCB4F02FCD8ECD8810 /* Pods_BackgroundFetcher.framework */; };
 		BD29920F1D158794005E1E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29920E1D158794005E1E7E /* AppDelegate.swift */; };
 		BD2992111D158794005E1E7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2992101D158794005E1E7E /* ViewController.swift */; };
 		BD2992141D158794005E1E7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2992121D158794005E1E7E /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FFC770085F34B954D71A2F1 /* Pods-BackgroundFetcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackgroundFetcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackgroundFetcher/Pods-BackgroundFetcher.release.xcconfig"; sourceTree = "<group>"; };
+		4AD4F5774DB57F129D7BBB35 /* Pods-BackgroundFetcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackgroundFetcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackgroundFetcher/Pods-BackgroundFetcher.debug.xcconfig"; sourceTree = "<group>"; };
+		4EEA79DCB4F02FCD8ECD8810 /* Pods_BackgroundFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackgroundFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD29920B1D158794005E1E7E /* BackgroundFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackgroundFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD29920E1D158794005E1E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD2992101D158794005E1E7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99FC6A3932EE8EC2C3AE1928 /* Pods_BackgroundFetcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A5F263ADECA2DBE66FBCA6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4AD4F5774DB57F129D7BBB35 /* Pods-BackgroundFetcher.debug.xcconfig */,
+				0FFC770085F34B954D71A2F1 /* Pods-BackgroundFetcher.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8D943A9BCB4022A1AA8A5109 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EEA79DCB4F02FCD8ECD8810 /* Pods_BackgroundFetcher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BD2992021D158794005E1E7E = {
 			isa = PBXGroup;
 			children = (
 				BD29920D1D158794005E1E7E /* BackgroundFetcher */,
 				BD29920C1D158794005E1E7E /* Products */,
+				8A5F263ADECA2DBE66FBCA6B /* Pods */,
+				8D943A9BCB4022A1AA8A5109 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD29921D1D158794005E1E7E /* Build configuration list for PBXNativeTarget "BackgroundFetcher" */;
 			buildPhases = (
+				994B2C553F919239D5D878F0 /* 📦 Check Pods Manifest.lock */,
 				BD2992071D158794005E1E7E /* Sources */,
 				BD2992081D158794005E1E7E /* Frameworks */,
 				BD2992091D158794005E1E7E /* Resources */,
+				67A488878D31A8FCF6C56AE0 /* 📦 Embed Pods Frameworks */,
+				F6292D3BAA7467B2299D2B85 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		67A488878D31A8FCF6C56AE0 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BackgroundFetcher/Pods-BackgroundFetcher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		994B2C553F919239D5D878F0 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F6292D3BAA7467B2299D2B85 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BackgroundFetcher/Pods-BackgroundFetcher-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BD2992071D158794005E1E7E /* Sources */ = {
@@ -247,6 +322,7 @@
 		};
 		BD29921E1D158794005E1E7E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AD4F5774DB57F129D7BBB35 /* Pods-BackgroundFetcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BackgroundFetcher/Info.plist;
@@ -258,6 +334,7 @@
 		};
 		BD29921F1D158794005E1E7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FFC770085F34B954D71A2F1 /* Pods-BackgroundFetcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BackgroundFetcher/Info.plist;
@@ -286,6 +363,7 @@
 				BD29921F1D158794005E1E7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
