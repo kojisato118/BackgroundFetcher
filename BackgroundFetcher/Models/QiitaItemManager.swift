@@ -12,8 +12,19 @@ import Alamofire
 class QiitaItemManager: NSObject {
     private(set) var items : [QiitaItem] = []
     
-    func reloadDataFromLoaclWithHandler(handler : ([QiitaItem]) -> Void){
-        
+    func reloadDataFromLocalWithHandler(handler : ([QiitaItem]) -> Void){
+        if let filePath = self.filePath(){
+            if let data = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as? [QiitaItem]{
+                self.items = data
+                
+                handler(self.items)
+                return
+            }else{
+                handler([])
+            }
+        }else{
+            handler([])
+        }
     }
     
     func reloadDataFromServerWithHandler(handler : ([QiitaItem]) -> Void){
@@ -29,14 +40,33 @@ class QiitaItemManager: NSObject {
                         for item in JSON{
                             let qiita = QiitaItem(param: item)
                             self.items.append(qiita)
-                            handler(self.items)
                         }
+                        self.save()
+                        handler(self.items)
+                        return
                     }
                 case .Failure(let error):
                     print(error)
-                }}
+                }
+                handler([])
+        }
     }
     
+    func deleteItems(){
+        self.items = []
+        
+        guard let filePath = self.filePath() else{
+            return
+        }
+        
+        let manager = NSFileManager()
+        do {
+            try manager.removeItemAtPath(filePath)
+        }
+        catch let error{
+            print(error)
+        }
+    }
     
     private func save(){
         if let filePath = self.filePath(){

@@ -41,6 +41,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6CR-o4-Qt3">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="EOH-NB-2xy">
+                            <connections>
+                                <action selector="deleteButtonAction:" destination="BYZ-38-t0r" id="hU9-gF-4RN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="LND-Mt-ryY">
                             <connections>
                                 <action selector="reloadButtonAction:" destination="BYZ-38-t0r" id="ypS-M9-Csa"/>

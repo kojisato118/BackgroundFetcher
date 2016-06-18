@@ -20,7 +20,7 @@ class QiitaItemsTableViewController: UIViewController, UITableViewDelegate, UITa
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        self.reloadFromServer()
+        self.reloadFromLocal()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +33,11 @@ class QiitaItemsTableViewController: UIViewController, UITableViewDelegate, UITa
         self.reloadFromServer()
     }
     
+    @IBAction func deleteButtonAction(sender: AnyObject) {
+        self.qiitaItemManager.deleteItems()
+        self.data = []
+        self.tableView.reloadData()
+    }
 
     // MARK: - Table view data source
     
@@ -53,6 +58,13 @@ class QiitaItemsTableViewController: UIViewController, UITableViewDelegate, UITa
     }
 
     // MARK: - Methods
+    func reloadFromLocal(){
+        self.qiitaItemManager.reloadDataFromLocalWithHandler { items in
+            self.data = items
+            self.tableView.reloadData()
+        }
+    }
+    
     func reloadFromServer(){
         self.qiitaItemManager.reloadDataFromServerWithHandler { items in
             self.data = items
