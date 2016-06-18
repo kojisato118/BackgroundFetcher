@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		99FC6A3932EE8EC2C3AE1928 /* Pods_BackgroundFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EEA79DCB4F02FCD8ECD8810 /* Pods_BackgroundFetcher.framework */; };
 		BD29920F1D158794005E1E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29920E1D158794005E1E7E /* AppDelegate.swift */; };
-		BD2992111D158794005E1E7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2992101D158794005E1E7E /* ViewController.swift */; };
 		BD2992141D158794005E1E7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2992121D158794005E1E7E /* Main.storyboard */; };
 		BD2992161D158794005E1E7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD2992151D158794005E1E7E /* Assets.xcassets */; };
 		BD2992191D158794005E1E7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2992171D158794005E1E7E /* LaunchScreen.storyboard */; };
+		BD2992221D158819005E1E7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2992211D158819005E1E7E /* ViewController.swift */; };
+		BD2992241D15883C005E1E7E /* QiitaItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2992231D15883C005E1E7E /* QiitaItemsTableViewController.swift */; };
+		BD2992281D158B23005E1E7E /* QiitaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2992271D158B23005E1E7E /* QiitaItem.swift */; };
+		BD29922A1D158CCF005E1E7E /* QiitaItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2992291D158CCF005E1E7E /* QiitaItemManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +24,14 @@
 		4EEA79DCB4F02FCD8ECD8810 /* Pods_BackgroundFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackgroundFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD29920B1D158794005E1E7E /* BackgroundFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackgroundFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD29920E1D158794005E1E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BD2992101D158794005E1E7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BD2992131D158794005E1E7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD2992151D158794005E1E7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD2992181D158794005E1E7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD29921A1D158794005E1E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD2992211D158819005E1E7E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD2992231D15883C005E1E7E /* QiitaItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaItemsTableViewController.swift; sourceTree = "<group>"; };
+		BD2992271D158B23005E1E7E /* QiitaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaItem.swift; sourceTree = "<group>"; };
+		BD2992291D158CCF005E1E7E /* QiitaItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaItemManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,14 +84,33 @@
 		BD29920D1D158794005E1E7E /* BackgroundFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				BD2992201D158819005E1E7E /* ViewControllers */,
+				BD2992261D158B11005E1E7E /* Models */,
 				BD29920E1D158794005E1E7E /* AppDelegate.swift */,
-				BD2992101D158794005E1E7E /* ViewController.swift */,
 				BD2992121D158794005E1E7E /* Main.storyboard */,
 				BD2992151D158794005E1E7E /* Assets.xcassets */,
 				BD2992171D158794005E1E7E /* LaunchScreen.storyboard */,
 				BD29921A1D158794005E1E7E /* Info.plist */,
 			);
 			path = BackgroundFetcher;
+			sourceTree = "<group>";
+		};
+		BD2992201D158819005E1E7E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BD2992211D158819005E1E7E /* ViewController.swift */,
+				BD2992231D15883C005E1E7E /* QiitaItemsTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BD2992261D158B11005E1E7E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BD2992271D158B23005E1E7E /* QiitaItem.swift */,
+				BD2992291D158CCF005E1E7E /* QiitaItemManager.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +235,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD2992111D158794005E1E7E /* ViewController.swift in Sources */,
+				BD29922A1D158CCF005E1E7E /* QiitaItemManager.swift in Sources */,
+				BD2992221D158819005E1E7E /* ViewController.swift in Sources */,
+				BD2992281D158B23005E1E7E /* QiitaItem.swift in Sources */,
+				BD2992241D15883C005E1E7E /* QiitaItemsTableViewController.swift in Sources */,
 				BD29920F1D158794005E1E7E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
