@@ -21,8 +21,24 @@ class QiitaItemsTableViewController: UIViewController, UITableViewDelegate, UITa
         self.tableView.dataSource = self
         
         self.reloadFromLocal()
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(self.didBecomeActive),
+            name:UIApplicationDidBecomeActiveNotification,
+            object: nil)
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -66,9 +82,15 @@ class QiitaItemsTableViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func reloadFromServer(){
-        self.qiitaItemManager.reloadDataFromServerWithHandler { items in
+        self.qiitaItemManager.reloadDataFromServer({ (items) in
             self.data = items
             self.tableView.reloadData()
+            }) { (error) in
+                print(error)
         }
+    }
+    
+    func didBecomeActive(){
+        self.reloadFromLocal()
     }
 }

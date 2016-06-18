@@ -27,7 +27,7 @@ class QiitaItemManager: NSObject {
         }
     }
     
-    func reloadDataFromServerWithHandler(handler : ([QiitaItem]) -> Void){
+    func reloadDataFromServer(success : ([QiitaItem]) -> Void, failure : (NSError) -> Void){
         self.items = []
         let url = "https://qiita.com/api/v2/items"
         
@@ -42,13 +42,22 @@ class QiitaItemManager: NSObject {
                             self.items.append(qiita)
                         }
                         self.save()
-                        handler(self.items)
+                        success(self.items)
                         return
                     }
                 case .Failure(let error):
-                    print(error)
+                    failure(error)
                 }
-                handler([])
+        }
+    }
+    
+    func save(){
+        if let filePath = self.filePath(){
+            if NSKeyedArchiver.archiveRootObject(self.items, toFile: filePath) {
+                print("file save success!")
+            } else {
+                print("file save failured!")
+            }
         }
     }
     
@@ -65,16 +74,6 @@ class QiitaItemManager: NSObject {
         }
         catch let error{
             print(error)
-        }
-    }
-    
-    private func save(){
-        if let filePath = self.filePath(){
-            if NSKeyedArchiver.archiveRootObject(self.items, toFile: filePath) {
-                print("file save success!")
-            } else {
-                print("file save failured!")
-            }
         }
     }
     
